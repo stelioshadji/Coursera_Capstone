@@ -1,0 +1,50 @@
+{
+    "nbformat_minor": 2, 
+    "cells": [
+        {
+            "source": "# Coursera Capstone Project\n\n## The Battle of Neighborhoods (Week 1)\n", 
+            "cell_type": "markdown", 
+            "metadata": {}
+        }, 
+        {
+            "source": "### Gerardo A. Navia - Part 1 : Introduction and Data Sections", 
+            "cell_type": "markdown", 
+            "metadata": {}
+        }, 
+        {
+            "execution_count": 18, 
+            "cell_type": "code", 
+            "metadata": {}, 
+            "outputs": [
+                {
+                    "output_type": "stream", 
+                    "name": "stdout", 
+                    "text": "Fetching package metadata .............\nSolving package specifications: .\n\n# All requested packages already installed.\n# packages in environment at /opt/conda/envs/DSX-Python35:\n#\nfolium                    0.5.0                      py_0    conda-forge\nLibraries imported.\n"
+                }
+            ], 
+            "source": "import numpy as np # library to handle data in a vectorized manner\nimport time\nimport pandas as pd # library for data analsysis\npd.set_option('display.max_columns', None)\npd.set_option('display.max_rows', None)\n\nimport json # library to handle JSON files\nimport requests # library to handle requests\nfrom pandas.io.json import json_normalize # tranform JSON file into a pandas dataframe\n\nfrom geopy.geocoders import Nominatim # convert an address into latitude and longitude values\n!conda install -c conda-forge folium=0.5.0 --yes # uncomment this line if you haven't completed the Foursquare API lab\nimport folium # map rendering library\n\nprint('Libraries imported.')"
+        }, 
+        {
+            "source": "### Coursera Capstone - REPORT CONTENT\n\n1.\tIntroduction Section : \n\t\u2043\tDiscussion of the business problem and the interested audience in this project.\n2.\tData Section:  \n\t\u2043\t Description of the data that will be used to solve the problem and the sources.\n3.\tMethodology section \n\t\u2043\tDiscussion and description of exploratory data analysis carried out, any inferential statistical testing performed, and if any machine learnings were used establishing the strategy and purposes.\n4.\tResults section \n\t\u2043\tDiscussion of the results.\n5.\tDiscussion section \n\t\u2043\tElaboration and discussion on any observations noted and any recommendations suggested based on the results.\n6.\tConclusion section \n\t\u2043\tReport Conclusion.", 
+            "cell_type": "markdown", 
+            "metadata": {}
+        }, 
+        {
+            "execution_count": 19, 
+            "cell_type": "code", 
+            "metadata": {}, 
+            "outputs": [], 
+            "source": "# A description of the problem and a discussion of the background. (15 marks)"
+        }, 
+        {
+            "source": "# 1.\tIntroduction Section : \n### Discussion of the business problem and the audience who would be interested in this project.\n", 
+            "cell_type": "markdown", 
+            "metadata": {}
+        }, 
+        {
+            "source": "### Description of the Problem and Background\n\n### Scenario:\n\nI am a data scientist residing in Athens. \nI currently live within walking distance to Downtown Syntagma metro station and I enjoy many ammenities and venues in the area, such as various international cousine restaurants, cafes, food shops and entertainment.\nI have been offered a great opportunity to work for a leader firm in London. I am very excited and I want to use this opportunity to practice my learnings in Coursera in order to answer relevant questions arisen.\nThe key question is :  How can I find a convenient and enjoyable place similar to mine now in Athens?\nCertainly, I can use available real estate apps and Google but the idea is to use and apply myself the learned tools during the course.\nIn order to make a comparison and evaluation of the rental options in London, I must set some basis, therefore the apartment in London must meet the following demands:\n - apartment must be 1 or 2 bedrooms\n - desired location is near a metro station in the Paddigton area and within 1.0 mile (1.6 km) radius\n - price of rent not exceed $1,000 per month\n - top ammenities in the selected neighborhood shall be similar to current residence\n - desirable to have venues such as coffee shops, restaurants Asian Thai, wine stores, gym and food shops\n - as a reference, I have included a map of venues near current residence in Athens.\n    ", 
+            "cell_type": "markdown", 
+            "metadata": {}
+        }, 
+        {
+            "source": "### Business Problem:   \nThe challenge is to find a suitable apartment for rent in London that complies with the demands on location, price and venues. The data required to resolve this challenge is described in the following section 2, below.\n\n\n### Interested Audience\nI believe this is a relevant challenge with valid questions for anyone moving to other large city in US, EU or Asia. The same methodology can be applied in accordance to demands as applicable. This case is also applicable for anyone interested in exploring starting or locating a new business in any city. Lastly, it can also serve as a good practical exercise to develop Data Science skills.\n", 
